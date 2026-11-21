@@ -1,0 +1,55 @@
+2026-11-20 21:25:13 | INFO     | ##### INICIO DE LA SIMULACIÓN DE SOFTWARE FJ #####
+2026-11-20 21:25:13 | INFO     | === Operación 1: Registrar cliente válido (Ana Gómez)
+2026-11-20 21:25:13 | INFO     | Cliente creado correctamente: C001 - Ana Gómez
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 1.
+2026-11-20 21:25:13 | INFO     | === Operación 2: Registrar cliente con correo inválido
+2026-11-20 21:25:13 | ERROR    | Operación 2 falló: [FJ-100] Correo electrónico inválido: 'luis.perez#correo'.
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 2.
+2026-11-20 21:25:13 | INFO     | === Operación 3: Registrar cliente sin nombre (parámetro faltante)
+2026-11-20 21:25:13 | ERROR    | Operación 3 falló: [FJ-300] El nombre del cliente es obligatorio.
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 3.
+2026-11-20 21:25:13 | INFO     | === Operación 4: Registrar cliente válido (Carlos Ruiz)
+2026-11-20 21:25:13 | INFO     | Cliente creado correctamente: C004 - Carlos Ruiz
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 4.
+2026-11-20 21:25:13 | INFO     | === Operación 5: Crear servicio: sala de reuniones válida
+2026-11-20 21:25:13 | INFO     | Servicio creado: sala 'Sala Ejecutiva' (capacidad 10).
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 5.
+2026-11-20 21:25:13 | INFO     | === Operación 6: Crear equipo con tarifa negativa
+2026-11-20 21:25:13 | ERROR    | Operación 6 falló: [FJ-200] La tarifa por hora debe ser mayor que cero.
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 6.
+2026-11-20 21:25:13 | INFO     | === Operación 7: Crear servicio: asesoría especializada válida
+2026-11-20 21:25:13 | INFO     | Servicio creado: asesoría 'Asesoría en Python' nivel senior.
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 7.
+2026-11-20 21:25:13 | INFO     | Servicio creado: alquiler de equipo 'Proyector'.
+2026-11-20 21:25:13 | INFO     | Servicio creado: sala 'Sala de Capacitación' (capacidad 25).
+2026-11-20 21:25:13 | INFO     | === Operación 8: Reserva exitosa (sala 3 h, IVA 19 % y descuento 10 %)
+2026-11-20 21:25:13 | INFO     | Reserva R001 creada (PENDIENTE): Ana Gómez -> Sala Ejecutiva, 3 h.
+2026-11-20 21:25:13 | INFO     | Reserva R001 CONFIRMADA.
+2026-11-20 21:25:13 | INFO     | Reserva R001 PROCESADA. Costo total: $160,650.00
+2026-11-20 21:25:13 | DEBUG    | Fin del intento de procesar la reserva R001 (estado: PROCESADA).
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 8.
+2026-11-20 21:25:13 | INFO     | === Operación 9: Reserva de servicio no disponible
+2026-11-20 21:25:13 | ERROR    | Operación 9 falló: [FJ-201] El servicio 'Sala de Capacitación' no está disponible.
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 9.
+2026-11-20 21:25:13 | INFO     | === Operación 10: Reserva con duración inválida (12 h en una asesoría)
+2026-11-20 21:25:13 | ERROR    | Operación 10 falló: [FJ-400] No se pudo crear la reserva R003: duración rechazada.
+2026-11-20 21:25:13 | ERROR    |    Causa original: [FJ-200] Duración inválida para asesoría: 12 (permitido 1 a 6 horas).
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 10.
+2026-11-20 21:25:13 | INFO     | === Operación 11: Procesar reserva sin confirmar
+2026-11-20 21:25:13 | INFO     | Reserva R004 creada (PENDIENTE): Carlos Ruiz -> Proyector Full HD, 5 h.
+2026-11-20 21:25:13 | DEBUG    | Fin del intento de procesar la reserva R004 (estado: PENDIENTE).
+2026-11-20 21:25:13 | ERROR    | Operación 11 falló: [FJ-401] La reserva R004 debe estar CONFIRMADA para procesarse (estado actual: PENDIENTE).
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 11.
+2026-11-20 21:25:13 | INFO     | === Operación 12: Cálculo inconsistente (descuento del 90 %)
+2026-11-20 21:25:13 | INFO     | Reserva R005 creada (PENDIENTE): Ana Gómez -> Asesoría en Python, 2 h.
+2026-11-20 21:25:13 | INFO     | Reserva R005 CONFIRMADA.
+2026-11-20 21:25:13 | DEBUG    | Fin del intento de procesar la reserva R005 (estado: CONFIRMADA).
+2026-11-20 21:25:13 | ERROR    | Operación 12 falló: [FJ-400] Falló el cálculo de la reserva R005.
+2026-11-20 21:25:13 | ERROR    |    Causa original: [FJ-500] Descuento fuera de rango (0 a 0.5): 0.9
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 12.
+2026-11-20 21:25:13 | INFO     | === Operación 13: Cancelar la misma reserva dos veces
+2026-11-20 21:25:13 | INFO     | Reserva R006 creada (PENDIENTE): Carlos Ruiz -> Proyector Full HD, 4 h.
+2026-11-20 21:25:13 | WARNING  | Reserva R006 CANCELADA.
+2026-11-20 21:25:13 | ERROR    | Operación 13 falló: [FJ-401] No se puede cancelar la reserva R006 en estado CANCELADA.
+2026-11-20 21:25:13 | DEBUG    | Cierre de la operación 13.
+2026-11-20 21:25:13 | INFO     | ##### FIN DE LA SIMULACIÓN: el sistema terminó sin interrupciones #####
